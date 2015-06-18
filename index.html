@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LeMonocle</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta charset="utf-8">
+	<!-- Cuz Yolo -->
+</head>
+<body>
+	<header id="header" class="header">
+		<div id="gradient">
+			<aside>
+				<img src="./pictures/Monocle2.png" />
+			</aside>
+			<nav>
+				<ul>
+					<li><a class="active" href="#">Rechercher</a></li>
+					<li><a href="#">Proposer</a></li>
+					<li><a href="#">Infos</a></li>
+				</ul>
+			</nav>
+			<section id="headersection">
+			 <h1>
+				Discover unkown artists
+				<form>
+					<button type="button" onclick="search()"> Movie</button>
+					<button type="button" onclick="search()"> Music</button>
+					<button type="button" onclick="search()"> Game</button>
+				</form>
+			 <h1>
+			</section>
+			<a id="down" data-scroll href="#features" class="icon-down-open-big godown"> </a>
+		</div>
+	</header>
+
+	<section class="main" id="features">
+	</section>
+
+
+	<footer>
+		<div class="contain">
+			<p>© 2014. SocialCircle is open-source. Check it on <a href="https://github.com/Potrac/socialcircle">Github</a>!      Requires PHP 5.4+ and MySQL 5.5+</p>
+		</div>
+	</footer>
+
+	<script src="./js/main.js"></script>
+	<script src="js/smooth-scroll.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		smoothScroll.init({
+		    speed: 1000, // Integer. How fast to complete the scroll in milliseconds
+		    easing: 'easeInOutQuad', // Easing pattern to use
+		});
+	</script>
+</body>
+</html>
