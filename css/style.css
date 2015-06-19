@@ -87,7 +87,16 @@ a {
 
 /* UI */
 html{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Calibri', sans-serif;
+}
+
+/* helper */
+
+
+.hidden{
+
+display: none;
+
 }
 
 /* style */
@@ -96,7 +105,7 @@ html{
 /* header style */
 header{
 
-    color: white;
+    color: #;
     position: relative;
 
     background: url(../pictures/backgrounds/headerMini.jpg) no-repeat center; 
@@ -107,7 +116,7 @@ header{
     -moz-filter: hue-rotate(180deg);
     -o-filter: hue-rotate(180deg);
     -ms-filter: hue-rotate(180deg);;
-    -webkit-animation: huechange 30s alternate infinite;
+    -webkit-animation: huechange 30s alternate infinite, -webkit-filter 1s;
 }
 header div#gradient{
 
@@ -115,24 +124,34 @@ header div#gradient{
 
     height: 100%;
 
-    background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 
 }
 
-aside img{
+aside {
     position: absolute;
 
-    height: 10%;
+    width: 100%;
+    height: 200px;
+    margin: auto;
 
-    margin: 40px 20px 20px 40px;
+    
 
 }
+aside img{
+    width: 50%;
+
+    margin: auto;
+    position: absolute;
+    top:30px; left:0; right:0;
+}
+
 
 nav{
 
@@ -168,73 +187,158 @@ nav li:hover{
 
 header section{
 
-    height: 300px; width: 40%;
+    height: 450px; width: 50%;
+    min-width: 588px; max-width: 700px;
 
     margin: auto;
     overflow: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
 
-    background: rgba(112,100,66,1);
+    color: #ccbea6;
+    
+
+    overflow: hidden;
+
+    /*background: rgba(112,100,66,1); 
+
+    background: rgba(255,255,255,0.1); 
     border-radius: 50px;
-    border: 2px solid white;
-    box-shadow: 0 0 70px 2px rgba(0,0,0,0.6) inset;
+    /* border: 2px solid white; */
+    /* box-shadow: 0 0 70px 2px rgba(0,0,0,0.6) inset; */
 
     transition: box-shadow .6s;
 }
 header section:hover{
 
-    box-shadow: 0 0 20px 2px rgba(0,0,0,0.6) inset;
+
+    /* box-shadow: 0 0 20px 2px rgba(0,0,0,0.6) inset; */
 }
 header section h1{
-    margin: 50px 10px 10px 60px;
-    font-size: 2em;
-    font-style: bold;
+
+
+    width:  100%;
+
+    padding: 0;
+
+    text-align: center;
+    letter-spacing: 0.2em;
+    font-size: 6em;
+    font-style: normal;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    text-shadow: 2px 5px #143982;
+
+    margin: 0px 10px;
+    
 }
-header section form{
+header section h2{
 
-    width: 80%;
+    width:  100%;
 
-    position: absolute;
-    top: 40%;
-    left: 0; right: 0;
-    margin: auto;
+    padding: 0 0 40px 0;
+
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 0.23em;
+    word-spacing: 0.3em;
+    font-size: 2.2em;
+    font-style: normal;
+    text-transform: none;
+    text-shadow: 1px 2px 1px #143982;
+
+    border-bottom: 2px solid #143982;
+
+}
+
+
+header section div.boutoncontainer{
+
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+header section div.boutons{
+
+    width: 90%;
+
+    font-size: 1.8em;
+    padding-top: 30px;
+
+    margin: 0 5%;
+    position: relative;
+    bottom: 0;
+
+    transition: bottom 1s;
+
+}
+header section div.movie,header section div.videogame,header section div.music{
+
+    bottom: 400px;
+    transition: bottom 1s;
+
+
+}
+header section div.boutons table{
+    width: 100%;
+    text-align: center;
 
 }
 header section button{
 
-    width: 20%; height: 80px;
+    height: 70px;
 
-    color: white;
+
+    color: #ccbea6;
     font-size: 0.7em;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px #143982;
 
-    border: 1px solid white;
+    border: 2px solid #143982;
     border-radius: 15px;
-    padding: 10px 5px;
-    margin: 0 5%;
+    padding: 5px 20px;
+    margin: 10px auto;
     cursor: pointer;
 
     background: rgba(0,0,0,0.1);   
     box-shadow: 0 0 10px 2px rgba(255,255,255,0.2) inset;
 
-    transition: box-shadow .6s, background .8s;         
+    transition: box-shadow 1s, background .4s, color .4s, text-shadow .2s;         
 }
 header section button:hover{
-    background: rgba(255,255,255,0.1); 
+    background: #143982; 
     box-shadow: 0 0 40px 2px rgba(0,0,0,0.6);
 }
+header section button:focus{
 
-header a#down{
+    outline: 0;
+    color: #0a2356;
+    background: #143982;    
+    text-shadow: 0px 1px 1px rgba(204,190,166,0.6);
+}
+header section button.focused{
+    outline: 0;
+    color: #0a2356;
+    background: #143982;    
+    text-shadow: 0px 1px 1px rgba(204,190,166,0.6);
+}
 
-    font-size: 3em;
+header #down{
 
-    width: 30px;
+   display: none;
+
+    width: 70px;
     margin: auto;
     right: 0; left: 0; 
     bottom: 40px;
     position: absolute;
 }
+header #down a{
+    margin: 0;
+    padding: 0;
 
+    font-size: 3em;
+}
 
 
 

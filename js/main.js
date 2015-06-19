@@ -43,7 +43,7 @@ function getScroll(){
 		header.style.height = headerheight + "px";
 	}
 
-	fullscreen(".main");
+	fullscreen("#results");
 	fullscreen("#header");
 
 
@@ -66,27 +66,6 @@ function getScroll(){
 	}
 
 
-//Hide the arrow on scroll
-	function toggleHide(id){
-		var e = document.getElementById(id);
-		e.style.opacity = 0;
-	}
-
-	function toggleShow(id){
-		var e = document.getElementById(id);
-		e.style.opacity = 1;
-	}
-
-	function togglegestion(id){
-		var scrollinfo = getScroll();
-
-		if(scrollinfo["t"] > (window.innerHeight)/3){
-			toggleHide(id);
-		}
-		else if(scrollinfo["t"] <= (window.innerHeight)/3){
-			toggleShow(id);
-		}
-	}
 
 //put in black and white element
 	function bandw(id, onoff){ //0 = from b&w to colorfull / 1 = from colorfull to b&w
@@ -111,28 +90,14 @@ function getScroll(){
 		}
 	}
 
-	//desaturate the header when scrolling down
-	function bandwonscroll(id){
-
-		var scrollinfo = getScroll(),
-			windowheight = window.innerHeight;
-
-
-		if(scrollinfo["t"] > windowheight*0.3){
-			bandw(id, 1)
-		}
-		else if(scrollinfo["t"] <= (windowheight*0.3)){
-			bandw(id, 0)
-		}
-	}
  
 
 
 //Things to update on resize (don't delete the others if don't know what there are) 
 
 	window.onresize = function(){
-		fullscreen(".main");
-		fullscreen(".results");
+		fullscreen("#header");
+		fullscreen("#results");
 		headerform("header","header section");
 	}
 
@@ -140,8 +105,6 @@ function getScroll(){
 //Things to update on scroll (don't delete the others if don't know what there are)
 
 	window.onscroll = function(){
-		bandwonscroll("header");
-		togglegestion("down");
 	}
 
 

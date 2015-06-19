@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>LeMonocle</title>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/loader.css">
 	<link rel="stylesheet" href="css/style.css">
 	<meta charset="utf-8">
 	<!-- Cuz Yolo -->
@@ -12,42 +12,132 @@
 	<header id="header" class="header">
 		<div id="gradient">
 			<aside>
-				<img src="./pictures/Monocle2.png" />
+				<img src="./pictures/Monocle3-trait.png" />
 			</aside>
-			<nav>
+			<!-- <nav>
 				<ul>
 					<li><a class="active" href="#">Rechercher</a></li>
 					<li><a href="#">Proposer</a></li>
 					<li><a href="#">Infos</a></li>
 				</ul>
-			</nav>
+			</nav> -->
 			<section id="headersection">
 			 <h1>
-				Discover unkown artists
-				<form>
-					<button type="button" onclick="search()"> Movie</button>
-					<button type="button" onclick="search()"> Music</button>
-					<button type="button" onclick="search()"> Game</button>
-				</form>
+			 	Découvre 
+			</h1>
+			<h2>Des films, des jeux, des musiques de tout genre </h2>
+
+			<div class="boutoncontainer">
+				<div class="boutons global">
+					<table>
+						<tr>
+							<td>
+								<button type="button" onclick="infos('movie', this)"> Film </button> 
+							</td>
+							<td>
+								<button type="button" onclick="infos('music', this)"> Musique </button>
+							</td>
+							<td>
+								<button type="button" onclick="infos('videogame', this)"> Jeux </button> 
+							</td>
+						</tr>
+					</table>										
+				</div>
+				<div class="movie boutons hidden">
+					<table>
+						<tr>
+							<td>
+								<button type="button" onclick="search(this, 'Thriller', 'movie')"> Thriller </button>
+							</td>
+							<td>
+								<button type="button" onclick="search(this, 'Action', 'movie')"> Action </button>
+							</td>
+							<td>
+								<button type="button" onclick="search(this, 'Fantaisie', 'movie')"> Fantaisie </button> 
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" onclick="search(this, 'Comedy', 'movie')"> Comedy </button>
+							</td>
+							<td>
+								<button type="button" onclick="search(this, 'Porn', 'movie')"> Porn </button> 
+							</td>
+							<td>
+								<button type="button" onclick="infos('global', this)"> Back </button> 
+							</td>
+						</tr>
+					</table>
+					 
+				</div>
+				<div class="music boutons hidden">
+					<table>
+						<tr>
+							<td>
+								<button type="button" onclick="search(this, 'Electro','music')"> Electro </button>  
+							</td>
+							<td>
+								<button type="button" onclick="search(this, 'Pop','music')"> Pop </button>
+							</td>
+							<td>
+								<button type="button" onclick="search(this, 'World','music')"> World </button> 
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" onclick="infos('global', this)"> Back </button> 
+							</td>
+						</tr>
+					</table>
+					
+				</div>
+				<div class="videogame boutons hidden">
+					<table>
+						<tr>
+							<td>
+								<button type="button" onclick="search(this, 'MMORPG','videogame')"> MMORPG </button>  
+							</td>
+							<td>
+								<button type="button" onclick="search(this, 'RPG','videogame')"> RPG </button>
+							</td>
+							<td>
+								<button type="button" onclick="search(this, 'Aventure','videogame')"> Aventure </button> 
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button type="button" onclick="infos('global', this)"> Back </button> 
+							</td>
+						</tr>
+					</table>
+					 
+					
+					
+				</div>
+			<div>
 			 <h1>
 			</section>
-			<a id="down" data-scroll href="#features" class="icon-down-open-big godown"> </a>
+			<div id="down" > 
+				<a  data-scroll href="#features" class="icon-down-open-big godown hidden"> </a>
+				<div class="loader"> Chargement... </div>
+			</div>
 		</div>
 	</header>
 
-	<section class="main" id="features">
+	<section class="main" id="results">
 	</section>
 
 
 	<footer>
 		<div class="contain">
-			<p>© 2014. SocialCircle is open-source. Check it on <a href="https://github.com/Potrac/socialcircle">Github</a>!      Requires PHP 5.4+ and MySQL 5.5+</p>
+			
 		</div>
 	</footer>
 
 	<script src="./js/main.js"></script>
-	<script src="js/smooth-scroll.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="./js/smooth-scroll.js"></script>
+	<script src="./js/buttonfunction.js"></script>
+
 	
 	<script type="text/javascript">
 		smoothScroll.init({
