@@ -27,15 +27,17 @@ function infos(type, ele){
 
 function search (element ,genre, media) {
 
-	var loading = document.querySelector('#down');
-	var ancient = document.querySelectorAll('button[class~="focused"]')[0];
+	var loading 	= document.querySelector('#down');
+	var ancient 	= document.querySelectorAll('button[class~="focused"]')[0];
+	var results 	= document.querySelector("#results");
+
+	results.style.display 	= "block";
+	loading.style.display 	= "block";
+	element.className 		= element.className += " focused";
 
 	if(ancient != undefined){
 		ancient.className = ancient.className.replace('focused','');
 	}
-	loading.style.display = "block";
-	element.className = element.className += " focused";
-
 
 	setTimeout(function() {
 

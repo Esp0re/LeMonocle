@@ -342,8 +342,10 @@ header #down a{
 
 
 
+section#results{
 
-
+    display: none;
+}
 
 
 
